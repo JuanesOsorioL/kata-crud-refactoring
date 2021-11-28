@@ -1,7 +1,11 @@
-package co.com.sofka.crud;
+package co.com.sofka.crud.Controller;
 
+import co.com.sofka.crud.Model.Todo;
+import co.com.sofka.crud.Service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -14,7 +18,7 @@ public class TodoController {
     public Iterable<Todo> list(){
         return service.list();
     }
-    
+
     @PostMapping(value = "api/todo")
     public Todo save(@RequestBody Todo todo){
         return service.save(todo);
@@ -36,6 +40,11 @@ public class TodoController {
     @GetMapping(value = "api/{id}/todo")
     public Todo get(@PathVariable("id") Long id){
         return service.get(id);
+    }
+
+    @GetMapping(value = "api/{id}/todos")
+    public ArrayList<Todo> mostrarTodosById(@PathVariable("id") Long id){
+        return service.TodosByIdGrupos(id);
     }
 
 }
