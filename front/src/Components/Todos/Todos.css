@@ -1,0 +1,15 @@
+/*  width: calc(8.3% * 5); */
+
+li{
+  text-decoration: none;
+      display:flex;
+    
+}
+.checkbox{
+margin: 0px ;
+}
+
+.tachar{
+  color:rgb(179, 179, 179);
+  text-decoration: line-through;
+}

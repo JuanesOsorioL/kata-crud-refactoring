@@ -14,7 +14,7 @@ public class GrupoController {
     @Autowired
     private GrupoService gruposervice;
 
-    @GetMapping(value = "api/grupo")//consultar un grupo
+    @GetMapping(value = "api/grupos")//consultar un grupo
     public ArrayList<Grupo> list(){
         return gruposervice.list();
     }
@@ -25,12 +25,12 @@ public class GrupoController {
       gruposervice.listacompleta();
     }*/
 
-    @PostMapping(value = "api/grupos")//agregar grupo
+    @PostMapping(value = "api/grupo")//agregar grupo
     public Grupo save(@RequestBody Grupo grupo){
         return gruposervice.save(grupo);
     }
 
-    @DeleteMapping(value = "api/{id}/grupos")
+    @DeleteMapping(value = "api/{id}/grupo")
     public void delete(@PathVariable("id")Long id){
         gruposervice.delete(id);
     }
